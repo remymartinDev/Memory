@@ -30,13 +30,6 @@ td {
   border: 10px solid #ebebeb;
 }
 
-.image{
-  background-color: white;
-  height: 100px;
-  width: 100px;
-  border: 5px solid #ebebeb;
-  box-sizing: content-box;
-}
 
 .cache {
   background-color: #aaaaaa;
@@ -48,5 +41,16 @@ td {
 
 
 .cache:hover {
-  background-color: #cccccc;
+  background-color: #626262;
+}
+
+.image{
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border: 5px solid #ebebeb;
+  box-sizing: content-box;
+}
+.image:hover {
+  background-color: #0000000f;
 }

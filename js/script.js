@@ -3,6 +3,8 @@ var app = {
   table:null,
   tr:null,
   td:null,
+  div:null,
+  onClick:null,
 
   init: function(){
 
@@ -21,11 +23,18 @@ var app = {
 
     // $('button').on('click', app.onClick);
 
-    console.log(app.slot);
+
 
     app.createTable();
-  },
 
+
+
+    $('.carte').on('click', app.onClick);
+
+
+
+
+  },
   createTable: function() {
     app.table=$('<table>');
 
@@ -45,11 +54,21 @@ var app = {
   },
 
   createSlot: function() {
-    app.div = $('<div class="cache">');
-    app.td = $('<td class="carte">');
+    app.div = $('<div class="carte cache">');
+    app.td = $('<td>');
     app.tr.append(app.td);
     app.td.append(app.div);
+  },
+
+  onClick: function() {
+    $(this).toggleClass('image');
+    $(this).toggleClass('cache');
+
   }
+
+
+
+
 /*
 
 */
