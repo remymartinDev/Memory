@@ -1,0 +1,52 @@
+header {
+  font-size: 3rem;
+  background-color: #ebebeb;
+  width: 75%;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
+
+table {
+  margin: auto;
+}
+/*
+td {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  border: 10px solid grey;
+  box-sizing: content-box;
+}
+*/
+#plateau {
+  margin: auto;
+  background-color: #ebebeb;
+  width: 770px;
+  height: 440px;
+  box-sizing: content-box;
+  border: 10px solid #ebebeb;
+}
+
+.image{
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border: 5px solid #ebebeb;
+  box-sizing: content-box;
+}
+
+.cache {
+  background-color: #aaaaaa;
+  height: 100px;
+  width: 100px;
+  border: 5px solid #ebebeb;
+  box-sizing: content-box;
+}
+
+
+.cache:hover {
+  background-color: #cccccc;
+}
