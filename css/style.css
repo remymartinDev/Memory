@@ -45,7 +45,7 @@ td {
 }
 
 .image{
-  background-color: white;
+  background-image: url(../images/cards.png);
   height: 100px;
   width: 100px;
   border: 5px solid #ebebeb;
@@ -53,4 +53,76 @@ td {
 }
 .image:hover {
   background-color: #0000000f;
+}
+
+.fruit1 {
+  background-position: 0 0px;
+}
+
+.fruit2 {
+  background-position: 0 -100px;
+}
+
+.fruit3 {
+  background-position: 0 -200px;
+}
+
+.fruit4 {
+  background-position: 0 -300px;
+}
+
+.fruit5 {
+  background-position: 0 -400px;
+}
+
+.fruit6 {
+  background-position: 0 -500px;
+}
+
+.fruit7 {
+  background-position: 0 -600px;
+}
+
+.fruit8 {
+  background-position: 0 -700px;
+}
+
+.fruit9 {
+  background-position: 0 -800px;
+}
+
+.fruit10 {
+  background-position: 0 900px;
+}
+
+.fruit11 {
+  background-position: 0 800px;
+}
+
+.fruit12 {
+  background-position: 0 700px;
+}
+
+.fruit13 {
+  background-position: 0 600px;
+}
+
+.fruit14 {
+  background-position: 0 500px;
+}
+
+.fruit15 {
+  background-position: 0 400px;
+}
+
+.fruit16 {
+  background-position: 0 300px;
+}
+
+.fruit17 {
+  background-position: 0 200px;
+}
+
+.fruit18 {
+  background-position: 0 100px;
 }
