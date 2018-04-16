@@ -8,23 +8,48 @@ header {
   margin-bottom: 3rem;
   padding: 1rem;
 }
-button {
-  float: left;
+
+#buttons {
+  margin: auto;
+  width: 22%;
+  display:flex;
 }
+
+button {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  margin-right: 0.3rem;
+}
+
 #plateau table {
   margin: auto;
 }
 
 .highscores {
   margin-top: 2rem;
+  margin: auto;
+  width: 22%;
 }
+
 .highscores table td{
   border: 1px black solid;
+  padding: 25px;
 }
-#plateau {
+
+.plateau1 {
   margin: auto;
   background-color: #ebebeb;
   width: 770px;
+  height: 440px;
+  box-sizing: content-box;
+  border: 10px solid #ebebeb;
+  margin-bottom: 10px;
+}
+
+.plateau2 {
+  margin: auto;
+  background-color: #ebebeb;
+  width: 990px;
   height: 440px;
   box-sizing: content-box;
   border: 10px solid #ebebeb;
@@ -47,7 +72,6 @@ button {
 .notPaired {
   background-color: #ff00004a;
 }
-
 
 .messagePaired {
   font-size: 1.7rem;
@@ -83,7 +107,6 @@ button {
   box-sizing: content-box;
 }
 
-
 .cache:hover {
   background-color: #626262;
 }
@@ -94,8 +117,9 @@ button {
   width: 100px;
   border: 5px solid #ebebeb;
   box-sizing: content-box;
-  transition: 
+  transition:
 }
+
 .image:hover {
   background-color: #0000000f;
 }
@@ -172,8 +196,15 @@ button {
   background-position: 0 100px;
 }
 
-#countdown {
-  width: 790px;
+.countdownNormal {
+  width: 760px;
+  margin: 10px auto;
+  height: 33px;
+  background-color: #fcd4d4;
+}
+
+.countdownHard {
+  width: 980px;
   margin: 10px auto;
   height: 33px;
   background-color: #fcd4d4;

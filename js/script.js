@@ -15,10 +15,10 @@ var app = {
   countdown:null,
   normalMode:['fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14','fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14'],
   hardMode:['fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14','fruit15','fruit16','fruit17','fruit18','fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14','fruit15','fruit16','fruit17','fruit18'],
-  highscore:[],
 
 //chargement de la page =>> boutons difficulté
   init: function(){
+
     app.normal = $('<button id="normal">');
     $('#buttons').append(app.normal);
     $('#normal').text('Partie Normale');
@@ -26,6 +26,12 @@ var app = {
     app.hard = $('<button id="hard">');
     $('#buttons').append(app.hard);
     $('#hard').text('Partie Difficile');
+
+    $('#plateau').removeClass('plateau1');
+    $('#plateau').removeClass('plateau2');
+
+    $('#countdown').removeClass('countdownHard');
+    $('#countdown').removeClass('countdownNormal');
 
     $('#hard').on('click', app.initHard);
     $('#normal').on('click', app.initNormal);
@@ -39,7 +45,8 @@ var app = {
   //réinitialisation en cas de partie précédente
     app.index=0;
     $('table').remove();
-
+    $('#plateau').addClass('plateau2');
+    $('#countdown').addClass('countdownHard');
   //mélange du tableau
     app.shuffleHard();
   //création du plateau de jeu
@@ -58,6 +65,9 @@ var app = {
     app.index=0;
     $('table').remove();
 
+    $('#plateau').addClass('plateau1');
+    $('#countdown').addClass('countdownNormal');
+
 //mélange du tableau
     app.shuffle();
 //création du plateau de jeu
@@ -67,6 +77,15 @@ var app = {
 //écoute du clic
     $('.carte').on('click', app.onClick);
   },
+
+
+
+
+
+
+
+
+
 
 
 //création de la balise <table> dans le DOM
@@ -143,7 +162,7 @@ var app = {
       return;
     }
 //message si on click une carte déjà retournée
-    else if ($(this).attr('data-paired')==='on') {
+    else if ($(this).attr('data-paired')==='on'&& app.essai>1) {
       app.messageAlreadyClicked();
       window.setTimeout(app.messageClear, 1000);
       return;
@@ -245,29 +264,7 @@ var app = {
   },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*************************************************/
 //FONCTIONS DU HARD mode
   createTableHard: function() {
     app.table=$('<table>');
@@ -286,7 +283,7 @@ var app = {
   },
 
   createSlotHard: function() {
-    app.div = $('<div id ="slot'+app.index+'"class="carte cache '+ app.normalMode[app.index]+'" data-type="'+app.normalMode[app.index]+'" data-status="off" data-paired="off">');
+    app.div = $('<div id ="slot'+app.index+'"class="carte cache '+ app.hardMode[app.index]+'" data-type="'+app.hardMode[app.index]+'" data-status="off" data-paired="off">');
     app.index++;
     app.td = $('<td>');
     app.tr.append(app.td);
@@ -296,11 +293,11 @@ var app = {
   shuffleHard: function() {
     for ($i = 35; $i > 0; $i--) {
       $j = Math.floor(Math.random() * ($i + 1));
-      $temp = app.normalMode[$i];
-      app.normalMode[$i] = app.normalMode[$j];
-      app.normalMode[$j] = $temp;
+      $temp = app.hardMode[$i];
+      app.hardMode[$i] = app.hardMode[$j];
+      app.hardMode[$j] = $temp;
     }
-    return app.normalMode;
+    return app.hardMode;
   },
 
   onClickHard: function() {
@@ -327,7 +324,7 @@ var app = {
       window.setTimeout(app.messageClear, 1000);
       return;
     }
-    else if ($(this).attr('data-paired')==='on') {
+    else if ($(this).attr('data-paired')==='on'&& app.essai>1) {
       app.messageAlreadyClicked();
       window.setTimeout(app.messageClear, 1000);
       return;
