@@ -4,23 +4,23 @@ header {
   width: 75%;
   text-align: center;
   margin: auto;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 3rem;
   padding: 1rem;
 }
-
-table {
+button {
+  float: left;
+}
+#plateau table {
   margin: auto;
 }
-/*
-td {
-  background-color: red;
-  height: 100px;
-  width: 100px;
-  border: 10px solid grey;
-  box-sizing: content-box;
+
+.highscores {
+  margin-top: 2rem;
 }
-*/
+.highscores table td{
+  border: 1px black solid;
+}
 #plateau {
   margin: auto;
   background-color: #ebebeb;
@@ -28,8 +28,52 @@ td {
   height: 440px;
   box-sizing: content-box;
   border: 10px solid #ebebeb;
+  margin-bottom: 10px;
 }
 
+#message {
+  height: 57px;
+  text-align: center;
+  margin: auto;
+}
+
+.messageNotPaired {
+  font-size: 1.7rem;
+  width: 24%;
+  background-color: #ff6868;
+  color: #ffffff;
+}
+
+.notPaired {
+  background-color: #ff00004a;
+}
+
+
+.messagePaired {
+  font-size: 1.7rem;
+  width: 24%;
+  background-color: #8fcb49;
+  color: #ffffff;
+}
+
+.Paired {
+  background-color: #8fcb494a;
+}
+.messageWin {
+  background-color: #8fcb49;
+  color: #ffffff;
+  padding: 10rem;
+  font-size: 3.7rem;
+  width: 65%;
+}
+
+.messageLose {
+  background-color: #ff6868;
+  color: #ffffff;
+  padding: 10rem;
+  font-size: 3.7rem;
+  width: 65%;
+}
 
 .cache {
   background-color: #aaaaaa;
@@ -50,6 +94,7 @@ td {
   width: 100px;
   border: 5px solid #ebebeb;
   box-sizing: content-box;
+  transition: 
 }
 .image:hover {
   background-color: #0000000f;
@@ -125,4 +170,22 @@ td {
 
 .fruit18 {
   background-position: 0 100px;
+}
+
+#countdown {
+  width: 790px;
+  margin: 10px auto;
+  height: 33px;
+  background-color: #fcd4d4;
+}
+
+.countdown {
+  height: 100%;
+  text-align: center;
+  padding: 0 10px;
+  color: white;
+  line-height: 33px;
+  width: 0;
+  background-color: red;
+  box-sizing: border-box;
 }
