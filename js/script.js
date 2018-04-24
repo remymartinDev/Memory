@@ -48,7 +48,7 @@ var app = {
     $('#plateau').addClass('plateau2');
     $('#countdown').addClass('countdownHard');
   //mélange du tableau
-    app.shuffleHard();
+    // app.shuffleHard();
   //création du plateau de jeu
     app.createTableHard();
   //démarrage du chrono
@@ -69,7 +69,7 @@ var app = {
     $('#countdown').addClass('countdownNormal');
 
 //mélange du tableau
-    app.shuffle();
+    // app.shuffle();
 //création du plateau de jeu
     app.createTable();
 //démarrage du chrono
