@@ -1,43 +1,42 @@
+## Memory
+
+Tiny game HTML / CSS / JQUERY
+
+## Règles du jeu
+make your choice between 2 game levels
+* Standard : 14 pairs in 1min00
+* Hard : 18 pairs in 1min30
+
+* Cards are set hidden.
+
+
+* you have to clic on 2 cards. If they match, pair is validated. Else, cards are hidden, and you must select 2 other cards
+
+* if both cards are not paired, you must wait 1 second while you can memorize pictures.
+
+* during this 1 second, you can't clic on other cards.
+
+* if both cards match, you can clic again without waiting 1 second.
+
+* you win if you manage to find all pairs before the end of given time.
+
 # Memory
 
-Le but est de coder un mini-jeu en HTML / CSS / JS.  
-Il s’agit du jeu “memory” :
+petit jeu en HTML / CSS / JQUERY
 
-* Des cartes sont disposées face cachée à l'écran.
+## Règles du jeu
+vous choisissez entre 2 modes de difficulté :
+* normal : 14 paires à trouver en 1min00
+* difficile : 18 paires à trouver en 1min30
 
-* Le joueur doit cliquer sur deux cartes. Si celles-ci sont identiques, la paire est validée. Sinon, les cartes sont retournées face cachée, et le joueur doit sélectionner une nouvelle paire de cartes.
+* des cartes sont disposées face cachée à l'écran.
 
-* Le joueur gagne s'il arrive à découvrir toutes les paires avant la fin du temps imparti.
+* vous devez cliquer sur deux cartes. Si celles-ci sont identiques, la paire est validée. Sinon, les cartes sont retournées face cachée, et vous devez sélectionner une nouvelle paire de cartes.
 
-![jeu memory](docs/images/jeu-memory.png)
+* si les deux images ne sont pas identiques, il faut attendre un laps de temps (1 seconde) pour pouvoir mémoriser les images, puis les retourner face cachée.
 
-Ready? C'est parti !
+* pendant le laps de temps, vous ne pouvez pas cliquer sur une autre carte.
 
-## Instructions
+* si les deux images sont identiques, vous pouvez cliquer sans attendre sur deux nouvelles cartes.
 
-1. [On installe](docs/1_on-installe.md)
-2. [On retourne](docs/2_on-retourne.md)
-3. [La face visible](docs/3_la-face-visible.md)
-4. [Une paire ?](docs/4_une-paire.md)
-5. [Veni, vidi, vici](docs/5_veni-vedi-vici.md)
-6. [Compte à rebours](docs/6_compte-a-rebours.md)
-
-Pour ceux qui ont envie de pousser le bouchon, c'est par ici : [BONUS](docs/7_bonus.md)
-
-## Conseils
-
-Si la tâche semble harassante, pas d’inquiétude ! Chaque étape est détaillée pour avancer petit à petit. Ne vous précipitez pas, et faites les choses bien. Quelques conseils :
-
-* Lisez tout l’énoncé dès le début, pour savoir où vous allez.
-
-* Prenez le temps de coder, en commentant votre code dès qu’il est nécessaire, pourquoi pas en copiant la consigne en commentaire.
-
-* Gardez des fonctions simples, qui ne font qu’une seule chose, pour mieux vous y retrouver.
-
-* Plus les premières étapes seront bien codées, plus la suite sera facile !
-
-* Quelques liens vous sont glissés à chaque étape pour vous donner des indices, mais aussi vous permettre de bien comprendre ce qui est demandé.
-
----
-
-Amusez-vous bien, et allez le plus loin possible ! ✌️
+* vous gagnez si vous arrivez à découvrir toutes les paires avant la fin du temps imparti.
