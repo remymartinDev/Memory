@@ -2,7 +2,7 @@
 
 Tiny game HTML / CSS / JQUERY
 
-## Règles du jeu
+## Rules
 make your choice between 2 game levels
 * Standard : 14 pairs in 1min00
 * Hard : 18 pairs in 1min30
