@@ -13,11 +13,80 @@ var app = {
   id:null,
   pairs:0,
   countdown:null,
-  normalMode:['fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14','fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14'],
-  hardMode:['fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14','fruit15','fruit16','fruit17','fruit18','fruit1','fruit2','fruit3','fruit4','fruit5','fruit6','fruit7','fruit8','fruit9','fruit10','fruit11','fruit12','fruit13','fruit14','fruit15','fruit16','fruit17','fruit18'],
+  normalMode:['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10','img11','img12','img13','img14','img1','img2','img3','img4','img5','img6','img7','img8','img9','img10','img11','img12','img13','img14'],
+  hardMode:['img1','img2','img3','img4','img5','img6','img7','img8','img9','img10','img11','img12','img13','img14','img15','img16','img17','img18','img1','img2','img3','img4','img5','img6','img7','img8','img9','img10','img11','img12','img13','img14','img15','img16','img17','img18'],
+  image:null,
 
 //chargement de la page =>> boutons difficulté
   init: function(){
+    
+
+    $('#message').addClass('startMessages');
+    $('#message').text('choisissez un thème');
+
+
+    app.disney = $('<button id="disney" class="choice">');
+    $('#themes').append(app.disney);
+    $('#disney').text('Thème Disney');
+
+    app.fruits = $('<button id="fruits" class="choice">');
+    $('#themes').append(app.fruits);
+    $('#fruits').text('Thème Fruits');
+
+    app.marvel = $('<button id="marvel" class="choice">');
+    $('#themes').append(app.marvel);
+    $('#marvel').text('Thème Marvel');
+
+    app.nintendo = $('<button id="nintendo" class="choice">');
+    $('#themes').append(app.nintendo);
+    $('#nintendo').text('Thème Nintendo');
+
+    app.southpark = $('<button id="southpark" class="choice">');
+    $('#themes').append(app.southpark);
+    $('#southpark').text('Thème South Park');
+
+    $('#disney').on('click', function(){
+      app.image='image disney';
+      $('body').addClass('disneyPattern').addClass('bodyFilter');
+      $('button').remove('.choice');
+      app.back = 'disneyBack';
+      app.initGeneral();
+    });
+    $('#fruits').on('click', function(){
+      app.image='image fruits';
+      $('body').addClass('fruitsPattern').addClass('bodyFilter');
+      $('button').remove('.choice');
+      app.back = 'fruitsBack';
+      app.initGeneral();
+    });
+    $('#marvel').on('click', function(){
+      app.image='image marvel';
+      $('body').addClass('marvelPattern').addClass('bodyFilter');
+      $('button').remove('.choice');
+      app.back = 'marvelBack';
+      app.initGeneral();
+    });
+    $('#nintendo').on('click', function(){
+      app.image='image nintendo';
+      $('body').addClass('nintendoPattern').addClass('bodyFilter');
+      $('button').remove('.choice');
+      app.back = 'nintendoBack';
+      app.initGeneral();
+    });
+    $('#southpark').on('click', function(){
+      app.image='image southPark';
+      $('body').addClass('southParkPattern').addClass('bodyFilter');
+      $('button').remove('.choice');
+      app.back = 'southParkBack';
+      app.initGeneral();
+    });
+  },
+
+  initGeneral: function(){
+
+    $('#message').text('');
+    $('#message').text('Choisissez un niveau de difficulté');
+    $('#countdown').append($('<div class="countdown">'));
 
     app.normal = $('<button id="normal">');
     $('#buttons').append(app.normal);
@@ -33,22 +102,33 @@ var app = {
     $('#countdown').removeClass('countdownHard');
     $('#countdown').removeClass('countdownNormal');
 
+    $('button').addClass('button');
+    $('.header').addClass('button');
+    $('#message').addClass('button');
+
     $('#hard').on('click', app.initHard);
     $('#normal').on('click', app.initNormal);
   },
 
-  initHard: function(){
 
+
+  initHard: function(){
 //disparition des boutons
+    $('#message').text('').removeClass('startMessages');
+    $('button').removeClass('button');
+    $('.header').removeClass('button');
+    $('#message').removeClass('button');
+
     $('button').remove('#hard');
     $('button').remove('#normal');
   //réinitialisation en cas de partie précédente
     app.index=0;
     $('table').remove();
+
     $('#plateau').addClass('plateau2');
     $('#countdown').addClass('countdownHard');
   //mélange du tableau
-    // app.shuffleHard();
+    app.shuffleHard();
   //création du plateau de jeu
     app.createTableHard();
   //démarrage du chrono
@@ -57,7 +137,15 @@ var app = {
     $('.carte').on('click', app.onClickHard);
 },
 
+
+
   initNormal: function(){
+    
+    $('#message').text('').removeClass('startMessages');
+    $('button').removeClass('button');
+    $('.header').removeClass('button');
+    $('#message').removeClass('button');
+
 //disparition des boutons
     $('button').remove('#hard');
     $('button').remove('#normal');
@@ -67,9 +155,8 @@ var app = {
 
     $('#plateau').addClass('plateau1');
     $('#countdown').addClass('countdownNormal');
-
 //mélange du tableau
-    // app.shuffle();
+    app.shuffle();
 //création du plateau de jeu
     app.createTable();
 //démarrage du chrono
@@ -80,15 +167,7 @@ var app = {
 
 
 
-
-
-
-
-
-
-
-
-//création de la balise <table> dans le DOM
+  //création de la balise <table> dans le DOM
   createTable: function() {
     app.table=$('<table>');
 
@@ -109,20 +188,20 @@ var app = {
     app.table.append(app.tr);
   },
 
-//création des <td>, éléments enfants des <tr>
-//chaque <td> sera parent d'une <div class=" carte cache fruitX"> avec des datas :
-//data-type : testera si les cartes sont identiques
-//data-status : teste si la carte a été retournée
-//data-paired : si la carte a été apairée
+  //création des <td>, éléments enfants des <tr>
+  //chaque <td> sera parent d'une <div class=" carte cache fruitX"> avec des datas :
+  //data-type : testera si les cartes sont identiques
+  //data-status : teste si la carte a été retournée
+  //data-paired : si la carte a été apairée
   createSlot: function() {
-    app.div = $('<div id ="slot'+app.index+'"class="carte cache '+ app.normalMode[app.index]+'" data-type="'+app.normalMode[app.index]+'" data-status="off" data-paired="off">');
+    app.div = $('<div id ="slot'+app.index+'"class="'+app.back+' cache carte '+ app.normalMode[app.index]+'" data-type="'+app.normalMode[app.index]+'" data-status="off" data-paired="off">');
     app.index++;
     app.td = $('<td>');
     app.tr.append(app.td);
     app.td.append(app.div);
   },
 
-//randomisation du tableau des images
+//randomisation du tableau des app.image
   shuffle: function() {
     for ($i = 27; $i > 0; $i--) {
       $j = Math.floor(Math.random() * ($i + 1));
@@ -137,7 +216,7 @@ var app = {
 
 //1er click, les informations sur la carte sont stockées dans un tableau
     if ($(this).attr('data-status')==='off' && $(this).attr('data-paired')==='off' && app.essai===0) {
-      $(this).addClass('image').attr('data-status', 'on');
+      $(this).addClass(app.image).attr('data-status', 'on');
       app.essai++;
       $status = $(this).attr('data-status');
       $type = $(this).attr('data-type');
@@ -147,7 +226,7 @@ var app = {
     }
 //2nd click, les informations sont stockées dans un 2nd tableau, puis match() les compare
     if ($(this).attr('data-status')==='off' && $(this).attr('data-paired')==='off' && app.essai===1) {
-      $(this).addClass('image').attr('data-status', 'on');
+      $(this).addClass(app.image).attr('data-status', 'on');
       app.essai++;
       $status = $(this).attr('data-status');
       $type = $(this).attr('data-type');
@@ -181,7 +260,7 @@ var app = {
       app.pairs++;
       app.endGame();
     }
-//les cartes ne sont pas identiques, la data "status" est remise sur off,la classe "image" est enlevée pour que les cartes se retournent et les variables de comparaison sont reset
+//les cartes ne sont pas identiques, la data "status" est remise sur off,la classe app.image est enlevée pour que les cartes se retournent et les variables de comparaison sont reset
     else {
       app.messageNotPaired();
       window.setTimeout(app.messageClearNotPaired, 1000);
@@ -196,13 +275,13 @@ var app = {
     if (app.pairs === 14 && $('.countdown').text() !== '0:0'){
       alert('Vous avez gagné');
       $('#plateau').remove('table');
-      app.init();
+      location.reload();
     }
 //le countdown est terminé alors que toutes les paires n'ont pas été trouvées
     if (app.pairs !== 14 && $('.countdown').text() === '0:0'){
       alert('Vous avez perdu');
       $('#plateau').remove('table');
-      app.init();
+      location.reload();
     }
   },
 
@@ -230,8 +309,8 @@ var app = {
   messageClearNotPaired: function() {
     app.essai=0;
     $('#message').removeClass('messageNotPaired').text('');
-    $('#'+app.array1[0]).removeClass('notPaired').removeClass('image').attr('data-status', 'off');
-    $('#'+app.array2[0]).removeClass('notPaired').removeClass('image').attr('data-status', 'off');
+    $('#'+app.array1[0]).removeClass('notPaired').removeClass(app.image).attr('data-status', 'off');
+    $('#'+app.array2[0]).removeClass('notPaired').removeClass(app.image).attr('data-status', 'off');
   },
 //app.essai=2 ==> message si clic sur une 3eme carte
   messageWait: function() {
@@ -261,7 +340,13 @@ var app = {
         app.countDown(timeleft - 1, timetotal, $element);
       }, 1000);
     }
+    
+    else {
+      app.endGame()
+    }
   },
+
+
 
 
 /*************************************************/
@@ -283,7 +368,7 @@ var app = {
   },
 
   createSlotHard: function() {
-    app.div = $('<div id ="slot'+app.index+'"class="carte cache '+ app.hardMode[app.index]+'" data-type="'+app.hardMode[app.index]+'" data-status="off" data-paired="off">');
+    app.div = $('<div id ="slot'+app.index+'"class="'+app.back+' cache carte '+ app.hardMode[app.index]+'" data-type="'+app.hardMode[app.index]+'" data-status="off" data-paired="off">');
     app.index++;
     app.td = $('<td>');
     app.tr.append(app.td);
@@ -302,7 +387,7 @@ var app = {
 
   onClickHard: function() {
     if ($(this).attr('data-status')==='off' && $(this).attr('data-paired')==='off' && app.essai===0) {
-      $(this).addClass('image').attr('data-status', 'on');
+      $(this).addClass(app.image).attr('data-status', 'on');
       app.essai++;
       $status = $(this).attr('data-status');
       $type = $(this).attr('data-type');
@@ -311,7 +396,7 @@ var app = {
       return app.array1;
     }
     if ($(this).attr('data-status')==='off' && $(this).attr('data-paired')==='off' && app.essai===1) {
-      $(this).addClass('image').attr('data-status', 'on');
+      $(this).addClass(app.image).attr('data-status', 'on');
       app.essai++;
       $status = $(this).attr('data-status');
       $type = $(this).attr('data-type');
@@ -352,12 +437,12 @@ var app = {
     if (app.pairs === 18 && $('.countdown').text() !== '0:0'){
       alert('Vous avez gagné');
       $('#plateau').remove('table');
-      app.init();
+      location.reload();
     }
     if (app.pairs !== 18 && $('.countdown').text() === '0:0'){
       alert('Vous avez perdu');
       $('#plateau').remove('table');
-      app.init();
+      location.reload();
     }
   },
 

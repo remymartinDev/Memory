@@ -1,24 +1,50 @@
-header {
+body {
+  background-image: url(../images/backPattern.png);
+}
+
+.header {
   font-size: 3rem;
-  background-color: #ebebeb;
-  width: 75%;
+  background-color: #ebebeb67;
+  width: 35rem;
   text-align: center;
   margin: auto;
   margin-top: 0.5rem;
   margin-bottom: 3rem;
   padding: 1rem;
+  box-shadow: 0px 3px 10px black;
+  text-shadow: 0px 2px 3px white;
 }
 
 #buttons {
   margin: auto;
-  width: 22%;
   display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#themes {
+  margin: auto;    
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 button {
   padding: 1.5rem;
   font-size: 1.1rem;
   margin-right: 0.3rem;
+  margin-top: 1rem;
+  background-color: #ebebeb65;
+  box-shadow: 0px 3px 10px black;
+  border-radius: 10px;
+}
+
+button:hover {
+  color: #ffffff;
+  text-shadow: 2px 1px 3px black;
+  text-decoration: none;
+  background-color: #0000004d;
+  box-shadow: 0px 3px 10px white;
 }
 
 #plateau table {
@@ -38,21 +64,21 @@ button {
 
 .plateau1 {
   margin: auto;
-  background-color: #ebebeb;
-  width: 770px;
+  background-color: #ebebebe5;
+  width: 785px;
   height: 440px;
   box-sizing: content-box;
-  border: 10px solid #ebebeb;
+  border: 10px solid #00000073;
   margin-bottom: 10px;
 }
 
 .plateau2 {
   margin: auto;
-  background-color: #ebebeb;
-  width: 990px;
+  background-color: #ebebebe5;
+  width: 1009px;
   height: 440px;
   box-sizing: content-box;
-  border: 10px solid #ebebeb;
+  border: 10px solid #00000073;
   margin-bottom: 10px;
 }
 
@@ -60,11 +86,30 @@ button {
   height: 57px;
   text-align: center;
   margin: auto;
+  font-size: 1.4rem;
+}
+
+
+.startMessages {
+  height: 57px;
+  text-align: center;
+  margin: auto;
+  background-color: #ebebeb65;
+  width: 25%;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  box-shadow: 0px 3px 10px black;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: #ebebebeb;
 }
 
 .messageNotPaired {
   font-size: 1.7rem;
-  width: 24%;
+  width: 35%;
   background-color: #ff6868;
   color: #ffffff;
 }
@@ -75,7 +120,7 @@ button {
 
 .messagePaired {
   font-size: 1.7rem;
-  width: 24%;
+  width: 35%;
   background-color: #8fcb49;
   color: #ffffff;
 }
@@ -103,96 +148,160 @@ button {
   background-color: #aaaaaa;
   height: 100px;
   width: 100px;
-  border: 5px solid #ebebeb;
+  border: 5px solid #000000bd;
   box-sizing: content-box;
 }
 
 .cache:hover {
-  background-color: #626262;
+  background-color: #000000bd;
+  border: 5px solid #aaaaaa;
+}
+
+.disneyBack{
+  background-image: url(../images/memory/DisneyBack.png);
+}
+
+.disney{
+  background-image: url(../images/memory/DisneyFront.png);
+}
+
+.disneyPattern{
+  background-image: url(../images/memory/DisneyPattern.jpg);
+}
+
+.fruitsBack{
+  background-image: url(../images/memory/FruitsBack.png);
+}
+
+.fruits{
+  background-image: url(../images/memory/FruitsFront.png);
+}
+
+.fruitsPattern{
+  background-image: url(../images/memory/FruitsPattern.png);
+}
+
+.marvelBack{
+  background-image: url(../images/memory/MarvelBack.png);
+}
+
+.marvel{
+  background-image: url(../images/memory/MarvelFront.png);
+}
+
+.marvelPattern{
+  background-image: url(../images/memory/MarvelPattern.jpg);
+}
+
+.nintendoBack{
+  background-image: url(../images/memory/NintendoBack.png);
+}
+
+.nintendo{
+  background-image: url(../images/memory/NintendoFront.png);
+}
+
+.nintendoPattern{
+  background-image: url(../images/memory/NintendoPattern.png);
+}
+
+.southParkBack{
+  background-image: url(../images/memory/SouthParkBack.png);
+}
+
+.southPark{
+  background-image: url(../images/memory/SouthParkFront.png);
+}
+
+.southParkPattern{
+  background-image: url(../images/memory/SouthParkPattern.png);
+}
+
+.bodyFilter {
+  background-color: #00000080;
+  z-index:2;
 }
 
 .image{
-  background-image: url(../images/cards.png);
   height: 100px;
   width: 100px;
-  border: 5px solid #ebebeb;
+  border: 5px solid #ebebebe5;
   box-sizing: content-box;
-  transition:
 }
 
 .image:hover {
   background-color: #0000000f;
 }
 
-.fruit1 {
+.img1 {
   background-position: 0 0px;
 }
 
-.fruit2 {
+.img2 {
   background-position: 0 -100px;
 }
 
-.fruit3 {
+.img3 {
   background-position: 0 -200px;
 }
 
-.fruit4 {
+.img4 {
   background-position: 0 -300px;
 }
 
-.fruit5 {
+.img5 {
   background-position: 0 -400px;
 }
 
-.fruit6 {
+.img6 {
   background-position: 0 -500px;
 }
 
-.fruit7 {
+.img7 {
   background-position: 0 -600px;
 }
 
-.fruit8 {
+.img8 {
   background-position: 0 -700px;
 }
 
-.fruit9 {
+.img9 {
   background-position: 0 -800px;
 }
 
-.fruit10 {
+.img10 {
   background-position: 0 900px;
 }
 
-.fruit11 {
+.img11 {
   background-position: 0 800px;
 }
 
-.fruit12 {
+.img12 {
   background-position: 0 700px;
 }
 
-.fruit13 {
+.img13 {
   background-position: 0 600px;
 }
 
-.fruit14 {
+.img14 {
   background-position: 0 500px;
 }
 
-.fruit15 {
+.img15 {
   background-position: 0 400px;
 }
 
-.fruit16 {
+.img16 {
   background-position: 0 300px;
 }
 
-.fruit17 {
+.img17 {
   background-position: 0 200px;
 }
 
-.fruit18 {
+.img18 {
   background-position: 0 100px;
 }
 
@@ -219,4 +328,96 @@ button {
   width: 0;
   background-color: red;
   box-sizing: border-box;
+}
+
+#rules {
+  font-size: 2rem;
+  background-color: #ebebeb67;
+  width: 40rem;
+  text-align: center;
+  margin: auto;
+  box-shadow: 0px 3px 10px black;
+  margin-bottom: 8rem;
+  border-radius: 15px;
+}
+
+#rules p {
+  font-size: 1rem;
+  text-decoration: none;
+
+}
+
+a {
+  width: 30%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+  box-shadow: 0px 3px 10px black;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 2px 1px 3px black;
+  text-decoration: none;
+  background-color: #0000004d;
+  box-shadow: 0px 3px 10px white;
+}
+
+
+.home {
+  text-align: center;
+  margin: auto;
+  width: 35%;
+  font-size: 1.2rem;
+  padding-top: 1rem; 
+}
+
+.copyright {
+  color: white;
+  margin: auto;
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  left: 30%;
+  right: 30%;
+  text-shadow: 2px 1px 0px black;
+  background-color: #7272726b;
+  width: 20%;
+}
+
+.copyright a {
+  display: inline;
+  text-align: left;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: white;
+  box-shadow: none;
+  margin:0;
+  padding: 0rem 0rem 0.1rem 0.2rem;
+}
+
+.copyright a:hover {
+  font-size: 0.9rem;
+  text-shadow: none;
+  text-decoration: underline;
+  color: #b4b4b4;
+}
+
+.modal-body a {
+  display: inline;
+  text-align: left;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: black;
+  box-shadow: none;
+}
+
+.modal-bodyt a:hover {
+  font-size: 0.9rem;
+  text-shadow: none;
+  text-decoration: none;
+  color: #4c4ffe;
 }
